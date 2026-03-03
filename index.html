@@ -1,272 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeByMatheus | Web Developer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvino Man - Moda Masculina Premium</title>
+    <style>
+        /* Estilos Globais - Inspirados na paleta escura da imagem 24 */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #121212; /* Preto Profundo */
+            color: #E0E0E0; /* Cinza Claro para leitura */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        .container {
+            width: 100%;
+            max-width: 480px; /* Largura perfeita para celular */
+            text-align: center;
+            padding: 40px 20px;
+        }
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        /* Perfil - Logo e Nome */
+        .profile-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Foto Redonda */
+            border: 3px solid #C0C0C0; /* Borda Prata, como o logo */
+            margin-bottom: 15px;
+        }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+            margin: 0;
+        }
 
-body{
-background:#0b0b0f;
-color:white;
-overflow-x:hidden;
-}
+        .profile-bio {
+            font-size: 16px;
+            color: #A0A0A0;
+            margin: 10px 0 30px 0;
+        }
 
-#particles-js{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-}
+        /* Botões de Link (O Coração do Site) */
+        .link-item {
+            display: block;
+            background-color: #1F1F1F; /* Cinza Escuro */
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #333;
+            transition: all 0.3s ease; /* Animação suave */
+        }
 
-/* HEADER */
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 10%;
-position:fixed;
-width:100%;
-background:rgba(11,11,15,0.8);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
+        /* Destaque para o WhatsApp (Sua prioridade) */
+        .link-item.whatsapp {
+            background-color: #25D366; /* Verde Oficial WhatsApp */
+            color: #FFFFFF;
+            font-size: 20px;
+            border: none;
+        }
 
-.logo{
-font-weight:700;
-color:#00f2ff;
-font-size:18px;
-letter-spacing:1px;
-}
+        /* Efeito de passar o mouse (para desktop) */
+        .link-item:hover {
+            transform: scale(1.03); /* Aumenta levemente */
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:30px;
-font-size:14px;
-transition:0.3s;
-}
+        /* Ícones e Rodapé */
+        .social-icons {
+            margin-top: 40px;
+            font-size: 24px;
+        }
 
-nav a:hover{
-color:#00f2ff;
-}
+        .social-icons a {
+            color: #A0A0A0;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
 
-/* HERO */
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:0 20px;
-}
+        .social-icons a:hover {
+            color: #FFFFFF;
+        }
 
-.hero h1{
-font-size:48px;
-margin-bottom:15px;
-opacity:0;
-transform:translateY(40px);
-animation:fadeUp 1s forwards;
-}
-
-.hero p{
-color:#aaa;
-margin-bottom:30px;
-opacity:0;
-transform:translateY(40px);
-animation:fadeUp 1s forwards 0.3s;
-}
-
-.btn{
-padding:12px 30px;
-background:#00f2ff;
-color:black;
-border-radius:30px;
-font-weight:600;
-text-decoration:none;
-transition:0.3s;
-opacity:0;
-transform:translateY(40px);
-animation:fadeUp 1s forwards 0.6s;
-}
-
-.btn:hover{
-background:white;
-}
-
-/* SECTION */
-.section{
-padding:120px 10%;
-text-align:center;
-}
-
-.section h2{
-font-size:32px;
-margin-bottom:50px;
-}
-
-/* CARDS */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
-
-.card{
-background:#15151c;
-padding:30px;
-border-radius:20px;
-transition:0.4s;
-opacity:0;
-transform:translateY(50px);
-}
-
-.card.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 40px rgba(0,242,255,0.25);
-}
-
-.card h3{
-margin-bottom:10px;
-color:#00f2ff;
-}
-
-footer{
-text-align:center;
-padding:40px;
-color:#777;
-}
-
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:15px;
-margin-bottom:15px;
-}
-
-/* ANIMAÇÃO */
-@keyframes fadeUp{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-</style>
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <img src="sua-logo.jpg" alt="Marvino Moda Masculina Logo" class="profile-logo">
+        
+        <h1 class="profile-name">MARVINO</h1>
+        <p class="profile-bio">Moda Masculina Premium | Ofertas Reais Todos os Dias</p>
 
-<div id="particles-js"></div>
+        <a href="https://chat.whatsapp.com/G0YXU9..." class="link-item whatsapp">
+            🚀 ENTRE NO GRUPO VIP E RECEBA ANTES
+        </a>
 
-<header>
-<div class="logo">CodeByMatheus</div>
-<nav>
-<a href="#sobre">Sobre</a>
-<a href="#portfolio">Portfólio</a>
-<a href="#contato">Contato</a>
-</nav>
-</header>
+        <a href="https://www.instagram.com/marvino.man" class="link-item">
+            📸 Siga-nos no Instagram
+        </a>
 
-<section class="hero">
-<h1>Desenvolvedor Web & Freelancer</h1>
-<p>Criação de sites modernos, rápidos e focados em conversão.</p>
-<a href="#portfolio" class="btn">Ver Projetos</a>
-</section>
+        <a href="https://www.tiktok.com/@marvino.man" class="link-item">
+            🎵 Ofertas no TikTok
+        </a>
 
-<<section id="portfolio" class="section">
-<h2>Projetos Recentes</h2>
-<div class="grid">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1557821552-17105176677c" alt="Projeto 1">
-<h3>LojaTech</h3>
-<p>E-commerce moderno com checkout otimizado e alta conversão.</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a" alt="Projeto 2">
-<h3>FitPro Studio</h3>
-<p>Landing page premium para personal trainer com foco em leads.</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Projeto 3">
-<h3>Advocacia Prime</h3>
-<p>Site institucional elegante e responsivo.</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Projeto 4">
-<h3>CryptoVision</h3>
-<p>Dashboard moderna para análise de criptomoedas.</p>
-</div>
-
-</div>
-</section>
-
-<section id="contato" class="section">
-<h2>Contato</h2>
-<p>Email: seuemail@email.com</p>
-<p>Fiverr: fiverr.com/seuusername</p>
-</section>
-
-<footer>
-© 2026 CodeByMatheus
-</footer>
-
-<script>
-/* Partículas */
-particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 80 },
-    "color": { "value": "#00f2ff" },
-    "shape": { "type": "circle" },
-    "opacity": { "value": 0.5 },
-    "size": { "value": 3 },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#00f2ff",
-      "opacity": 0.3,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 2
-    }
-  }
-});
-
-/* Animação ao rolar */
-const cards = document.querySelectorAll('.card');
-window.addEventListener('scroll', () => {
-  cards.forEach(card => {
-    const cardTop = card.getBoundingClientRect().top;
-    if(cardTop < window.innerHeight - 100){
-      card.classList.add('show');
-    }
-  });
-});
-</script>
-
+    </div>
 </body>
 </html>
